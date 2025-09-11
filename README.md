@@ -4,16 +4,19 @@ Create a nitro app
 
 ```sh
 # npm
-npm create nitro-app
+npx create-nitro-app
 
 # pnpm
-pnpm create nitro-app
+pnpx create-nitro-app
 
 # yarn
-yarn create nitro-app
+yarn dlx create-nitro-app
 
 # bun
-bun create nitro-app
+bunx create-nitro-app
+
+# deno
+deno run -A npm:create-nitro-app
 ```
 
 ## Development
