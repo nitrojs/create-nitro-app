@@ -1,0 +1,35 @@
+# create-nitro-app
+
+Create a nitro app
+
+```sh
+# npm
+npm create nitro-app
+
+# pnpm
+pnpm create nitro-app
+
+# yarn
+yarn create nitro-app
+
+# bun
+bun create nitro-app
+```
+
+## Development
+
+<details>
+
+<summary>local development</summary>
+
+- Clone this repository
+- Install latest LTS version of [Node.js](https://nodejs.org/en/)
+- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
+- Install dependencies using `pnpm install`
+- Try CLI using `pnpm create-nitro-app`
+
+</details>
+
+## License
+
+Published under the [MIT](https://github.com/unjs/create-nitro-app/blob/main/LICENSE) license.
