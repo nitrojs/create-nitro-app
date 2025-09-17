@@ -8,11 +8,7 @@ import { downloadTemplate } from "giget";
 import type { DownloadTemplateResult } from "giget";
 import { hasTTY } from "std-env";
 // @ts-expect-error JSON import not supported for NodeNext but we use jiti here
-import {
-  name,
-  version,
-  description,
-} from "../package.json" with { type: "json" };
+import { name, version, description } from "../package.json" with { type: "json" }; // prettier-ignore
 import { nitroIcon, themeColor } from "./utils/ascii.ts";
 
 const DEFAULT_REGISTRY =
