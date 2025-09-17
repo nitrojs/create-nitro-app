@@ -1,7 +1,7 @@
 {
   "name": "create-nitro-app",
   "version": "0.8.0",
-  "description": "",
+  "description": "Create a Nitro app with a single command",
   "repository": "nitrojs/create-nitro-app",
   "license": "MIT",
   "sideEffects": false,
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "obuild",
-    "create-nitro-app": "node ./src/cli.ts",
+    "create-nitro-app": "node --import jiti/register ./src/cli.ts",
     "lint": "eslint . && prettier -c .",
     "lint:fix": "automd && eslint . --fix && prettier -w .",
     "prepack": "pnpm build",
@@ -23,7 +23,8 @@
   "dependencies": {
     "citty": "^0.1.6",
     "consola": "^3.4.2",
-    "giget": "^2.0.0"
+    "giget": "^2.0.0",
+    "std-env": "^3.9.0"
   },
   "devDependencies": {
     "@types/node": "^24.5.1",
@@ -31,6 +32,7 @@
     "changelogen": "^0.6.2",
     "eslint": "^9.35.0",
     "eslint-config-unjs": "^0.5.0",
+    "jiti": "^2.5.1",
     "obuild": "^0.2.1",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2",
