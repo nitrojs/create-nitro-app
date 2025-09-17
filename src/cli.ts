@@ -11,8 +11,11 @@ import { hasTTY } from "std-env";
 import { name, version, description } from "../package.json" with { type: "json" }; // prettier-ignore
 import { nitroIcon, themeColor } from "./utils/ascii.ts";
 
+// TODO: Uncomment once create-nitro-app repository is public
+// const DEFAULT_REGISTRY =
+//   "https://raw.githubusercontent.com/nitrojs/create-nitro-app/registry";
 const DEFAULT_REGISTRY =
-  "https://raw.githubusercontent.com/nitrojs/create-nitro-app/registry";
+  "https://raw.githubusercontent.com/nitrojs/starter/templates";
 const DEFAULT_TEMPLATE_NAME = "vite";
 
 const mainCommand = defineCommand({
