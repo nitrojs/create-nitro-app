@@ -1,9 +1,9 @@
 # create-nitro-app
 
-<!-- automd:badges color=pink -->
+<!-- automd:badges color=ff637e labelColor=18181B -->
 
-[![npm version](https://img.shields.io/npm/v/create-nitro-app?color=pink)](https://npmjs.com/package/create-nitro-app)
-[![npm downloads](https://img.shields.io/npm/dm/create-nitro-app?color=pink)](https://npm.chart.dev/create-nitro-app)
+[![npm version](https://img.shields.io/npm/v/create-nitro-app?color=ff637e&labelColor=18181B)](https://npmjs.com/package/create-nitro-app)
+[![npm downloads](https://img.shields.io/npm/dm/create-nitro-app?color=ff637e&labelColor=18181B)](https://npm.chart.dev/create-nitro-app)
 
 <!-- /automd -->
 
