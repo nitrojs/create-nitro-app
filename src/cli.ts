@@ -14,8 +14,6 @@ import { installDependencies, packageManagers, runScriptCommand } from "nypm";
 
 // Based on: https://github.com/unjs/giget/blob/main/src/cli.ts
 
-const pmNames = packageManagers.map((pm) => pm.name);
-
 const NAME = "Nitro";
 const DEFAULT_DIR = "nitro-app";
 
@@ -48,6 +46,9 @@ declare global {
   var __pkg_version__: string | undefined;
   var __pkg_description__: string | undefined;
 }
+
+const pmNames = packageManagers.map((pm) => pm.name);
+const currentPackageManager = detectCurrentPackageManager();
 
 const mainCommand = defineCommand({
   meta: {
@@ -101,7 +102,7 @@ const mainCommand = defineCommand({
       type: "string",
       description: `Package manager choice (${pmNames.join(", ")})`,
       alias: "p",
-      valueHint: detectCurrentPackageManager(),
+      valueHint: currentPackageManager,
     },
     gitInit: {
       type: "boolean",
@@ -206,24 +207,31 @@ const mainCommand = defineCommand({
       process.exit(1);
     }
 
+    // Prompt to install the dependencies
     const currentPackageManager = detectCurrentPackageManager();
     // Resolve package manager
     const packageManagerArg = args.packageManager as PackageManagerName;
-    const packageManagerSelectOptions = pmNames.map(
-      (pm) =>
-        ({
-          label: pm,
-          value: pm,
-          hint: currentPackageManager === pm ? "current" : undefined,
-        }) satisfies SelectPromptOptions["options"][number],
-    );
     const selectedPackageManager = pmNames.includes(packageManagerArg)
       ? packageManagerArg
       : await consola.prompt("Which package manager would you like to use?", {
           type: "select",
-          options: packageManagerSelectOptions,
           initial: currentPackageManager,
           cancel: "undefined",
+          options: [
+            {
+              label: "(none)",
+              value: "" as PackageManagerName,
+              hint: "Skip install dependencies step",
+            },
+            ...pmNames.map(
+              (pm) =>
+                ({
+                  label: pm,
+                  value: pm,
+                  hint: currentPackageManager === pm ? "current" : undefined,
+                }) satisfies SelectPromptOptions["options"][number],
+            ),
+          ],
         });
 
     // Install project dependencies
@@ -294,7 +302,6 @@ runMain(mainCommand);
 
 // ---- Internal utils ----
 
-// Prompt to install the dependencies
 function detectCurrentPackageManager() {
   const userAgent = process.env.npm_config_user_agent;
   if (!userAgent) {
