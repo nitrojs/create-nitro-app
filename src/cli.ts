@@ -10,10 +10,11 @@ import { defineCommand, runMain } from "citty";
 import { consola } from "consola";
 import { colors } from "consola/utils";
 import { downloadTemplate } from "giget";
-import { installDependencies } from "nypm";
-import { x } from "tinyexec";
+import { installDependencies, packageManagers, runScriptCommand } from "nypm";
 
 // Based on: https://github.com/unjs/giget/blob/main/src/cli.ts
+
+const pmNames = packageManagers.map((pm) => pm.name);
 
 const NAME = "Nitro";
 const DEFAULT_DIR = "nitro-app";
@@ -41,14 +42,6 @@ const BANNER = `\u001B[38;2;255;99;126m
 
                 \u001B[1mWelcome to ${NAME}!\u001B[22m
 \u001B[0m`;
-
-const PACKAGE_MANAGER_OPTIONS = [
-  "npm",
-  "pnpm",
-  "yarn",
-  "bun",
-  "deno",
-] as PackageManagerName[];
 
 declare global {
   var __pkg_name__: string | undefined;
@@ -106,9 +99,9 @@ const mainCommand = defineCommand({
     },
     packageManager: {
       type: "string",
-      description: "Package manager choice (npm, pnpm, yarn, bun, deno)",
-      alias: "pm",
-      valueHint: PACKAGE_MANAGER_OPTIONS.join("|"),
+      description: `Package manager choice (${pmNames.join(", ")})`,
+      alias: "p",
+      valueHint: detectCurrentPackageManager(),
     },
     gitInit: {
       type: "boolean",
@@ -127,7 +120,7 @@ const mainCommand = defineCommand({
     }
 
     // Prompt the user where to create the Nitro app
-    if (args.dir === "") {
+    if (!args.dir) {
       args.dir = await consola
         .prompt(`Where would you like to create your ${NAME} app?`, {
           placeholder: `./${DEFAULT_DIR}`,
@@ -153,8 +146,8 @@ const mainCommand = defineCommand({
         {
           type: "select",
           options: [
-            { label: "Override its contents", value: "override" },
             { label: "Select different directory", value: "new-directory" },
+            { label: "Override its contents", value: "override" },
             { label: "Abort", value: "abort" },
           ],
         },
@@ -213,22 +206,10 @@ const mainCommand = defineCommand({
       process.exit(1);
     }
 
-    // Prompt to install the dependencies
-    function detectCurrentPackageManager() {
-      const userAgent = process.env.npm_config_user_agent;
-      if (!userAgent) {
-        return;
-      }
-      const [name] = userAgent.split("/");
-      if (PACKAGE_MANAGER_OPTIONS.includes(name as PackageManagerName)) {
-        return name as PackageManagerName;
-      }
-    }
-
     const currentPackageManager = detectCurrentPackageManager();
     // Resolve package manager
     const packageManagerArg = args.packageManager as PackageManagerName;
-    const packageManagerSelectOptions = PACKAGE_MANAGER_OPTIONS.map(
+    const packageManagerSelectOptions = pmNames.map(
       (pm) =>
         ({
           label: pm,
@@ -236,22 +217,18 @@ const mainCommand = defineCommand({
           hint: currentPackageManager === pm ? "current" : undefined,
         }) satisfies SelectPromptOptions["options"][number],
     );
-    const selectedPackageManager = PACKAGE_MANAGER_OPTIONS.includes(
-      packageManagerArg,
-    )
+    const selectedPackageManager = pmNames.includes(packageManagerArg)
       ? packageManagerArg
-      : await consola
-          .prompt("Which package manager would you like to use?", {
-            type: "select",
-            options: packageManagerSelectOptions,
-            initial: currentPackageManager,
-            cancel: "reject",
-          })
-          .catch(() => process.exit(1));
+      : await consola.prompt("Which package manager would you like to use?", {
+          type: "select",
+          options: packageManagerSelectOptions,
+          initial: currentPackageManager,
+          cancel: "undefined",
+        });
 
     // Install project dependencies
     // or skip installation based on the '--no-install' flag
-    if (args.install === false) {
+    if (args.install === false || !selectedPackageManager) {
       consola.info("Skipping install dependencies step.");
     } else {
       consola.start("Installing dependencies...");
@@ -279,12 +256,13 @@ const mainCommand = defineCommand({
       args.gitInit = await consola
         .prompt("Initialize git repository?", {
           type: "confirm",
-          cancel: "reject",
+          cancel: "undefined",
         })
-        .catch(() => process.exit(1));
+        .then(Boolean);
     }
     if (args.gitInit) {
       try {
+        const { x } = await import("tinyexec");
         await x("git", ["init", template.dir], {
           throwOnError: true,
           nodeOptions: {
@@ -292,23 +270,38 @@ const mainCommand = defineCommand({
           },
         });
         consola.success("Git repository initialized.");
-      } catch (error_) {
-        consola.warn(`Failed to initialize git repository: ${error_}`);
+      } catch (error) {
+        consola.warn(`Failed to initialize git repository:`, error);
       }
     }
 
     // Display next steps
     consola.success(
-      `Nitro project has been created with the \`${template.name}\` template.`,
+      `${NAME} project has been created with the \`${template.name}\` template.`,
     );
     consola.info("Next steps:");
     const relativeTemplateDir = relative(process.cwd(), template.dir) || ".";
     if (relativeTemplateDir.length > 1) {
       consola.log(` › cd \`${relativeTemplateDir}\``);
     }
-    const runCmd = selectedPackageManager === "deno" ? "task" : "run";
-    consola.log(` › \`${selectedPackageManager} ${runCmd} dev\``);
+    if (selectedPackageManager) {
+      consola.log(` › \`${runScriptCommand(selectedPackageManager, "dev")} \``);
+    }
   },
 });
 
 runMain(mainCommand);
+
+// ---- Internal utils ----
+
+// Prompt to install the dependencies
+function detectCurrentPackageManager() {
+  const userAgent = process.env.npm_config_user_agent;
+  if (!userAgent) {
+    return;
+  }
+  const [name] = userAgent.split("/");
+  if (pmNames.includes(name as PackageManagerName)) {
+    return name as PackageManagerName;
+  }
+}
