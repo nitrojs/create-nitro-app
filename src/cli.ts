@@ -16,7 +16,6 @@ import { nitroIcon, themeColor } from "./utils/ascii.ts";
 //   "https://raw.githubusercontent.com/nitrojs/create-nitro-app/registry";
 const DEFAULT_REGISTRY =
   "https://raw.githubusercontent.com/nitrojs/starter/templates";
-const DEFAULT_TEMPLATE_NAME = "vite";
 
 const mainCommand = defineCommand({
   meta: {
@@ -35,7 +34,7 @@ const mainCommand = defineCommand({
       description: "Template name",
       type: "string",
       alias: "t",
-      default: DEFAULT_TEMPLATE_NAME,
+      default: "",
     },
     cwd: {
       type: "string",
@@ -86,7 +85,7 @@ const mainCommand = defineCommand({
 
     if (args.dir === "") {
       args.dir = await consola
-        .prompt("Where would you like to create your full-stack app?", {
+        .prompt("Where would you like to create your Nitro app?", {
           placeholder: "./nitro-app",
           type: "text",
           default: "nitro-app",
@@ -144,6 +143,18 @@ const mainCommand = defineCommand({
       }
     }
 
+    if (!args.template) {
+      args.template = await consola.prompt(
+        `What template would you like to use?`,
+        {
+          type: "select",
+          options: [
+            { value: "vite", label: "Full-stack with Vite" },
+            { value: "cli", label: "Backend with Nitro CLI" },
+          ],
+        },
+      );
+    }
     let template: DownloadTemplateResult;
     try {
       template = await downloadTemplate(args.template, {
