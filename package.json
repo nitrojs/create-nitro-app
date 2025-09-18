@@ -26,7 +26,7 @@
     "giget": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^24.5.1",
+    "@types/node": "^24.5.2",
     "automd": "^0.4.2",
     "changelogen": "^0.6.2",
     "eslint": "^9.35.0",
