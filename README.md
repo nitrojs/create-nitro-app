@@ -1,14 +1,22 @@
-![Create Nitro App](./.github/assets/create-nitro-app.png)
+# create-nitro-app
 
-# Create Nitro App
-
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-
-The fastest way to create a Nitro app.
+Create a nitro app
 
 ```sh
-npm create nitro-app@latest
+# npm
+npx create-nitro-app
+
+# pnpm
+pnpx create-nitro-app
+
+# yarn
+yarn dlx create-nitro-app
+
+# bun
+bunx create-nitro-app
+
+# deno
+deno run -A npm:create-nitro-app
 ```
 
 ## Development
@@ -27,11 +35,4 @@ npm create nitro-app@latest
 
 ## License
 
-Published under the [MIT](./LICENSE) license.
-
-<!-- Badges -->
-
-[npm-version-src]: https://img.shields.io/npm/v/create-nitro-app?style=flat&colorA=18181B&colorB=ff637e
-[npm-version-href]: https://npmjs.com/package/create-nitro-app
-[npm-downloads-src]: https://img.shields.io/npm/dm/create-nitro-app?style=flat&colorA=18181B&colorB=ff637e
-[npm-downloads-href]: https://npm.chart.dev/create-nitro-app
+Published under the [MIT](https://github.com/unjs/create-nitro-app/blob/main/LICENSE) license.
