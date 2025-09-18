@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.8.2
+
+[compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.1...v0.8.2)
+
+### 🚀 Enhancements
+
+- Add git init + package manager support ([#2](https://github.com/nitrojs/create-nitro-app/pull/2))
+
+### 🏡 Chore
+
+- Add codeowners file ([3d780b9](https://github.com/nitrojs/create-nitro-app/commit/3d780b9))
+- Ignore `nitro-app` dir ([2a055ed](https://github.com/nitrojs/create-nitro-app/commit/2a055ed))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.8.1
 
 
