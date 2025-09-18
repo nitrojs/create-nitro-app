@@ -1,5 +1,12 @@
 # create-nitro-app
 
+<!-- automd:badges color=pink -->
+
+[![npm version](https://img.shields.io/npm/v/create-nitro-app?color=pink)](https://npmjs.com/package/create-nitro-app)
+[![npm downloads](https://img.shields.io/npm/dm/create-nitro-app?color=pink)](https://npm.chart.dev/create-nitro-app)
+
+<!-- /automd -->
+
 Create a nitro app
 
 ```sh
@@ -35,4 +42,13 @@ deno run -A npm:create-nitro-app
 
 ## License
 
-Published under the [MIT](https://github.com/unjs/create-nitro-app/blob/main/LICENSE) license.
+<!-- automd:contributors license=MIT -->
+
+Published under the [MIT](https://github.com/nitrojs/create-nitro-app/blob/main/LICENSE) license.
+Made by [community](https://github.com/nitrojs/create-nitro-app/graphs/contributors) 💛
+<br><br>
+<a href="https://github.com/nitrojs/create-nitro-app/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=nitrojs/create-nitro-app" />
+</a>
+
+<!-- /automd -->
