@@ -1,11 +1,16 @@
 #!/usr/bin/env node
+
+import type { SelectPromptOptions } from "consola";
 import type { DownloadTemplateResult } from "giget";
+import type { PackageManagerName } from "nypm";
+
 import { existsSync } from "node:fs";
 import { relative, resolve } from "node:path";
 import { defineCommand, runMain } from "citty";
 import { consola } from "consola";
 import { colors } from "consola/utils";
 import { downloadTemplate } from "giget";
+import { installDependencies, packageManagers, runScriptCommand } from "nypm";
 
 // Based on: https://github.com/unjs/giget/blob/main/src/cli.ts
 
@@ -41,6 +46,9 @@ declare global {
   var __pkg_version__: string | undefined;
   var __pkg_description__: string | undefined;
 }
+
+const pmNames = packageManagers.map((pm) => pm.name);
+const currentPackageManager = detectCurrentPackageManager();
 
 const mainCommand = defineCommand({
   meta: {
@@ -87,7 +95,18 @@ const mainCommand = defineCommand({
     },
     install: {
       type: "boolean",
-      description: "Install dependencies after cloning",
+      description: "Skip install dependencies step",
+      default: true,
+    },
+    packageManager: {
+      type: "string",
+      description: `Package manager choice (${pmNames.join(", ")})`,
+      alias: "p",
+      valueHint: currentPackageManager,
+    },
+    gitInit: {
+      type: "boolean",
+      description: "Initialize git repository",
     },
     verbose: {
       type: "boolean",
@@ -101,7 +120,8 @@ const mainCommand = defineCommand({
       process.env.DEBUG = process.env.DEBUG || "true";
     }
 
-    if (args.dir === "") {
+    // Prompt the user where to create the Nitro app
+    if (!args.dir) {
       args.dir = await consola
         .prompt(`Where would you like to create your ${NAME} app?`, {
           placeholder: `./${DEFAULT_DIR}`,
@@ -127,18 +147,18 @@ const mainCommand = defineCommand({
         {
           type: "select",
           options: [
-            "Select different directory",
-            "Override its contents",
-            "Abort",
+            { label: "Select different directory", value: "new-directory" },
+            { label: "Override its contents", value: "override" },
+            { label: "Abort", value: "abort" },
           ],
         },
       );
       switch (selectedAction) {
-        case "Override its contents": {
+        case "override": {
           shouldForce = true;
           break;
         }
-        case "Select different directory": {
+        case "new-directory": {
           templateDownloadPath = resolve(
             cwd,
             await consola
@@ -157,6 +177,7 @@ const mainCommand = defineCommand({
       }
     }
 
+    // Prompt the user which template to use
     if (!args.template) {
       args.template = await consola.prompt(
         `What template would you like to use?`,
@@ -169,6 +190,8 @@ const mainCommand = defineCommand({
         },
       );
     }
+
+    // Download the template
     let template: DownloadTemplateResult;
     try {
       template = await downloadTemplate(args.template, {
@@ -184,10 +207,108 @@ const mainCommand = defineCommand({
       process.exit(1);
     }
 
-    const _from = template.name || template.url;
-    const _to = relative(process.cwd(), template.dir) || "./";
-    consola.log(`✨ Successfully cloned \`${_from}\` to \`${_to}\`\n`);
+    // Prompt to install the dependencies
+    const currentPackageManager = detectCurrentPackageManager();
+    // Resolve package manager
+    const packageManagerArg = args.packageManager as PackageManagerName;
+    const selectedPackageManager = pmNames.includes(packageManagerArg)
+      ? packageManagerArg
+      : await consola.prompt("Which package manager would you like to use?", {
+          type: "select",
+          initial: currentPackageManager,
+          cancel: "undefined",
+          options: [
+            {
+              label: "(none)",
+              value: "" as PackageManagerName,
+              hint: "Skip install dependencies step",
+            },
+            ...pmNames.map(
+              (pm) =>
+                ({
+                  label: pm,
+                  value: pm,
+                  hint: currentPackageManager === pm ? "current" : undefined,
+                }) satisfies SelectPromptOptions["options"][number],
+            ),
+          ],
+        });
+
+    // Install project dependencies
+    // or skip installation based on the '--no-install' flag
+    if (args.install === false || !selectedPackageManager) {
+      consola.info("Skipping install dependencies step.");
+    } else {
+      consola.start("Installing dependencies...");
+
+      try {
+        await installDependencies({
+          cwd: template.dir,
+          packageManager: {
+            name: selectedPackageManager,
+            command: selectedPackageManager,
+          },
+        });
+      } catch (error_) {
+        if (process.env.DEBUG) {
+          throw error_;
+        }
+        consola.error((error_ as Error).toString());
+        process.exit(1);
+      }
+
+      consola.success("Installation completed.");
+    }
+
+    if (args.gitInit === undefined) {
+      args.gitInit = await consola
+        .prompt("Initialize git repository?", {
+          type: "confirm",
+          cancel: "undefined",
+        })
+        .then(Boolean);
+    }
+    if (args.gitInit) {
+      try {
+        const { x } = await import("tinyexec");
+        await x("git", ["init", template.dir], {
+          throwOnError: true,
+          nodeOptions: {
+            stdio: "ignore",
+          },
+        });
+        consola.success("Git repository initialized.");
+      } catch (error) {
+        consola.warn(`Failed to initialize git repository:`, error);
+      }
+    }
+
+    // Display next steps
+    consola.success(
+      `${NAME} project has been created with the \`${template.name}\` template.`,
+    );
+    consola.info("Next steps:");
+    const relativeTemplateDir = relative(process.cwd(), template.dir) || ".";
+    if (relativeTemplateDir.length > 1) {
+      consola.log(` › cd \`${relativeTemplateDir}\``);
+    }
+    if (selectedPackageManager) {
+      consola.log(` › \`${runScriptCommand(selectedPackageManager, "dev")} \``);
+    }
   },
 });
 
 runMain(mainCommand);
+
+// ---- Internal utils ----
+
+function detectCurrentPackageManager() {
+  const userAgent = process.env.npm_config_user_agent;
+  if (!userAgent) {
+    return;
+  }
+  const [name] = userAgent.split("/");
+  if (pmNames.includes(name as PackageManagerName)) {
+    return name as PackageManagerName;
+  }
+}

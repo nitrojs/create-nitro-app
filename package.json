@@ -23,7 +23,9 @@
   "dependencies": {
     "citty": "^0.1.6",
     "consola": "^3.4.2",
-    "giget": "^2.0.0"
+    "giget": "^2.0.0",
+    "nypm": "^0.6.2",
+    "tinyexec": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
