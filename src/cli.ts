@@ -118,45 +118,41 @@ const mainCommand = defineCommand({
       `Creating a new project in ${colors.cyan(relative(cwd, templateDownloadPath) || templateDownloadPath)}.`,
     );
 
-    let shouldForce = Boolean(args.force);
     // Prompt the user if the template download directory already exists
     // when no `--force` flag is provided
-    const shouldVerify = !shouldForce && existsSync(templateDownloadPath);
-    if (shouldVerify) {
-      while (existsSync(templateDownloadPath) && !shouldForce) {
-        const selectedAction = await consola.prompt(
-          `The directory ${colors.cyan(templateDownloadPath)} already exists. What would you like to do?`,
-          {
-            type: "select",
-            options: [
-              "Override its contents",
-              "Select different directory",
-              "Abort",
-            ],
-          },
-        );
-
-        switch (selectedAction) {
-          case "Override its contents": {
-            shouldForce = true;
-            break;
-          }
-          case "Select different directory": {
-            templateDownloadPath = resolve(
-              cwd,
-              await consola
-                .prompt("Please specify a different directory:", {
-                  type: "text",
-                  cancel: "reject",
-                })
-                .catch(() => process.exit(1)),
-            );
-            break;
-          }
-          // 'Abort' or Ctrl+C
-          default: {
-            process.exit(1);
-          }
+    let shouldForce = Boolean(args.force);
+    while (existsSync(templateDownloadPath) && !shouldForce) {
+      const selectedAction = await consola.prompt(
+        `The directory ${colors.cyan(relative(process.cwd(), templateDownloadPath))} already exists. What would you like to do?`,
+        {
+          type: "select",
+          options: [
+            "Select different directory",
+            "Override its contents",
+            "Abort",
+          ],
+        },
+      );
+      switch (selectedAction) {
+        case "Override its contents": {
+          shouldForce = true;
+          break;
+        }
+        case "Select different directory": {
+          templateDownloadPath = resolve(
+            cwd,
+            await consola
+              .prompt("Please specify a different directory:", {
+                type: "text",
+                cancel: "reject",
+              })
+              .catch(() => process.exit(1)),
+          );
+          break;
+        }
+        // 'Abort' or Ctrl+C
+        default: {
+          process.exit(1);
         }
       }
     }
