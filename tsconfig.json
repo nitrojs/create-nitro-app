@@ -16,5 +16,6 @@
     "allowImportingTsExtensions": true,
     "noImplicitOverride": true,
     "noEmit": true
-  }
+  },
+  "exclude": ["nitro-app"]
 }
