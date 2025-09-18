@@ -1,11 +1,17 @@
 #!/usr/bin/env node
+
+import type { SelectPromptOptions } from "consola";
 import type { DownloadTemplateResult } from "giget";
+import type { PackageManagerName } from "nypm";
+
 import { existsSync } from "node:fs";
 import { relative, resolve } from "node:path";
 import { defineCommand, runMain } from "citty";
 import { consola } from "consola";
 import { colors } from "consola/utils";
 import { downloadTemplate } from "giget";
+import { installDependencies } from "nypm";
+import { x } from "tinyexec";
 
 // Based on: https://github.com/unjs/giget/blob/main/src/cli.ts
 
@@ -35,6 +41,14 @@ const BANNER = `\u001B[38;2;255;99;126m
 
                 \u001B[1mWelcome to ${NAME}!\u001B[22m
 \u001B[0m`;
+
+const PACKAGE_MANAGER_OPTIONS = [
+  "npm",
+  "pnpm",
+  "yarn",
+  "bun",
+  "deno",
+] as PackageManagerName[];
 
 declare global {
   var __pkg_name__: string | undefined;
@@ -87,7 +101,18 @@ const mainCommand = defineCommand({
     },
     install: {
       type: "boolean",
-      description: "Install dependencies after cloning",
+      description: "Skip install dependencies step",
+      default: true,
+    },
+    packageManager: {
+      type: "string",
+      description: "Package manager choice (npm, pnpm, yarn, bun, deno)",
+      alias: "pm",
+      valueHint: PACKAGE_MANAGER_OPTIONS.join("|"),
+    },
+    gitInit: {
+      type: "boolean",
+      description: "Initialize git repository",
     },
     verbose: {
       type: "boolean",
@@ -101,6 +126,7 @@ const mainCommand = defineCommand({
       process.env.DEBUG = process.env.DEBUG || "true";
     }
 
+    // Prompt the user where to create the Nitro app
     if (args.dir === "") {
       args.dir = await consola
         .prompt(`Where would you like to create your ${NAME} app?`, {
@@ -127,18 +153,18 @@ const mainCommand = defineCommand({
         {
           type: "select",
           options: [
-            "Select different directory",
-            "Override its contents",
-            "Abort",
+            { label: "Override its contents", value: "override" },
+            { label: "Select different directory", value: "new-directory" },
+            { label: "Abort", value: "abort" },
           ],
         },
       );
       switch (selectedAction) {
-        case "Override its contents": {
+        case "override": {
           shouldForce = true;
           break;
         }
-        case "Select different directory": {
+        case "new-directory": {
           templateDownloadPath = resolve(
             cwd,
             await consola
@@ -157,6 +183,7 @@ const mainCommand = defineCommand({
       }
     }
 
+    // Prompt the user which template to use
     if (!args.template) {
       args.template = await consola.prompt(
         `What template would you like to use?`,
@@ -169,6 +196,8 @@ const mainCommand = defineCommand({
         },
       );
     }
+
+    // Download the template
     let template: DownloadTemplateResult;
     try {
       template = await downloadTemplate(args.template, {
@@ -184,9 +213,101 @@ const mainCommand = defineCommand({
       process.exit(1);
     }
 
-    const _from = template.name || template.url;
-    const _to = relative(process.cwd(), template.dir) || "./";
-    consola.log(`✨ Successfully cloned \`${_from}\` to \`${_to}\`\n`);
+    // Prompt to install the dependencies
+    function detectCurrentPackageManager() {
+      const userAgent = process.env.npm_config_user_agent;
+      if (!userAgent) {
+        return;
+      }
+      const [name] = userAgent.split("/");
+      if (PACKAGE_MANAGER_OPTIONS.includes(name as PackageManagerName)) {
+        return name as PackageManagerName;
+      }
+    }
+
+    const currentPackageManager = detectCurrentPackageManager();
+    // Resolve package manager
+    const packageManagerArg = args.packageManager as PackageManagerName;
+    const packageManagerSelectOptions = PACKAGE_MANAGER_OPTIONS.map(
+      (pm) =>
+        ({
+          label: pm,
+          value: pm,
+          hint: currentPackageManager === pm ? "current" : undefined,
+        }) satisfies SelectPromptOptions["options"][number],
+    );
+    const selectedPackageManager = PACKAGE_MANAGER_OPTIONS.includes(
+      packageManagerArg,
+    )
+      ? packageManagerArg
+      : await consola
+          .prompt("Which package manager would you like to use?", {
+            type: "select",
+            options: packageManagerSelectOptions,
+            initial: currentPackageManager,
+            cancel: "reject",
+          })
+          .catch(() => process.exit(1));
+
+    // Install project dependencies
+    // or skip installation based on the '--no-install' flag
+    if (args.install === false) {
+      consola.info("Skipping install dependencies step.");
+    } else {
+      consola.start("Installing dependencies...");
+
+      try {
+        await installDependencies({
+          cwd: template.dir,
+          packageManager: {
+            name: selectedPackageManager,
+            command: selectedPackageManager,
+          },
+        });
+      } catch (error_) {
+        if (process.env.DEBUG) {
+          throw error_;
+        }
+        consola.error((error_ as Error).toString());
+        process.exit(1);
+      }
+
+      consola.success("Installation completed.");
+    }
+
+    if (args.gitInit === undefined) {
+      args.gitInit = await consola
+        .prompt("Initialize git repository?", {
+          type: "confirm",
+          cancel: "reject",
+        })
+        .catch(() => process.exit(1));
+    }
+    if (args.gitInit) {
+      try {
+        await x("git", ["init", template.dir], {
+          throwOnError: true,
+          nodeOptions: {
+            stdio: "ignore",
+          },
+        });
+        consola.success("Git repository initialized.");
+      } catch (error_) {
+        consola.warn(`Failed to initialize git repository: ${error_}`);
+      }
+    }
+
+    // Display next steps
+    consola.success(
+      `Nitro project has been created with the \`${template.name}\` template.`,
+    );
+    consola.info("Next steps:");
+    const relativeTemplateDir = relative(process.cwd(), template.dir) || ".";
+    if (relativeTemplateDir.length > 1) {
+      consola.log(` › cd \`${relativeTemplateDir}\``);
+    }
+    const runCmd = selectedPackageManager === "deno" ? "task" : "run";
+    consola.log(` › \`${selectedPackageManager} ${runCmd} dev\``);
   },
 });
 
