@@ -1,7 +1,7 @@
 {
   "name": "create-nitro-app",
   "version": "0.8.0",
-  "description": "",
+  "description": "Create a Nitro app with a single command",
   "repository": "nitrojs/create-nitro-app",
   "license": "MIT",
   "sideEffects": false,
