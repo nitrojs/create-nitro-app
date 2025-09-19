@@ -187,8 +187,9 @@ const mainCommand = defineCommand({
             value: t.name,
             label: t.description,
           })),
+          cancel: "reject"
         },
-      );
+      ).catch(() => process.exit(1));
     }
 
     // Download the template
