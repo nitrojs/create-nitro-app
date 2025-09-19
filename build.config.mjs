@@ -1,12 +1,6 @@
 import { defineBuildConfig } from "obuild/config";
 import pkg from "./package.json" with { type: "json" };
 
-console.log({
-  "globalThis.__pkg_version__": JSON.stringify(pkg.version),
-  "globalThis.__pkg_name__": JSON.stringify(pkg.name),
-  "globalThis.__pkg_description__": JSON.stringify(pkg.description),
-});
-
 export default defineBuildConfig({
   entries: [
     {
