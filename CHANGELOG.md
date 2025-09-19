@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.8.3
+
+[compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.2...v0.8.3)
+
+### 🩹 Fixes
+
+- Exit if user cancel template selection ([#3](https://github.com/nitrojs/create-nitro-app/pull/3))
+
+### 📦 Build
+
+- Fix pkg injection ([7228e06](https://github.com/nitrojs/create-nitro-app/commit/7228e06))
+
+### 🏡 Chore
+
+- Add badges ([b8819a8](https://github.com/nitrojs/create-nitro-app/commit/b8819a8))
+- Update badge colors ([3e7a300](https://github.com/nitrojs/create-nitro-app/commit/3e7a300))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Sébastien Chopin ([@atinux](https://github.com/atinux))
+
 ## v0.8.2
 
 [compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.1...v0.8.2)
