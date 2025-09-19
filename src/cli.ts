@@ -179,17 +179,16 @@ const mainCommand = defineCommand({
 
     // Prompt the user which template to use
     if (!args.template) {
-      args.template = await consola.prompt(
-        `What template would you like to use?`,
-        {
+      args.template = await consola
+        .prompt(`What template would you like to use?`, {
           type: "select",
           options: TEMPLATES.map((t) => ({
             value: t.name,
             label: t.description,
           })),
-          cancel: "reject"
-        },
-      ).catch(() => process.exit(1));
+          cancel: "reject",
+        })
+        .catch(() => process.exit(1));
     }
 
     // Download the template
