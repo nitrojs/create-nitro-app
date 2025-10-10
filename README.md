@@ -10,21 +10,42 @@
 Create a nitro app
 
 ```sh
-# npm
 npx create-nitro-app
+```
 
-# pnpm
+<details>
+
+<summary>Other package managers</summary>
+
+#### pnpm
+
+```sh
 pnpx create-nitro-app
+```
 
-# yarn
+#### yarn
+
+```sh
 yarn dlx create-nitro-app
+```
 
-# bun
+#### bun
+
+```sh
 bunx create-nitro-app
+```
 
-# deno
+#### deno
+
+```sh
 deno run -A npm:create-nitro-app
 ```
+
+</details>
+
+<div style="display:flex;justify-content:center;">
+  <img src="./.images/preview.png" alt="Preview" style="max-width:100%;height:auto;display:block;" />
+</div>
 
 ## Development
 
