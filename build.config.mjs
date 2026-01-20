@@ -7,10 +7,12 @@ export default defineBuildConfig({
       type: "bundle",
       input: "./src/cli.ts",
       rolldown: {
-        define: {
-          "globalThis.__pkg_version__": JSON.stringify(pkg.version),
-          "globalThis.__pkg_name__": JSON.stringify(pkg.name),
-          "globalThis.__pkg_description__": JSON.stringify(pkg.description),
+        transform: {
+          define: {
+            "globalThis.__pkg_version__": JSON.stringify(pkg.version),
+            "globalThis.__pkg_name__": JSON.stringify(pkg.name),
+            "globalThis.__pkg_description__": JSON.stringify(pkg.description),
+          },
         },
       },
     },

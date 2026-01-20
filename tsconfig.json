@@ -17,5 +17,7 @@
     "noImplicitOverride": true,
     "noEmit": true
   },
-  "exclude": ["nitro-app"]
+  "exclude": [
+    "nitro-app"
+  ]
 }
