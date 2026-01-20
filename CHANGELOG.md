@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.8.4
+
+[compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.3...v0.8.4)
+
+### 📦 Build
+
+- Optimize dependencies ([b08457a](https://github.com/nitrojs/create-nitro-app/commit/b08457a))
+
+### 🏡 Chore
+
+- Remove log ([0f48c09](https://github.com/nitrojs/create-nitro-app/commit/0f48c09))
+- Update dependencies ([c7e0fa3](https://github.com/nitrojs/create-nitro-app/commit/c7e0fa3))
+- Update readme ([af3c257](https://github.com/nitrojs/create-nitro-app/commit/af3c257))
+- Lint ([5d1247f](https://github.com/nitrojs/create-nitro-app/commit/5d1247f))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.8.3
 
 [compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.2...v0.8.3)
