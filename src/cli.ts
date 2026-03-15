@@ -17,8 +17,7 @@ import { installDependencies, packageManagers, runScriptCommand } from "nypm";
 const NAME = "Nitro";
 const DEFAULT_DIR = "nitro-app";
 
-const REGISTRY_URL =
-  "https://raw.githubusercontent.com/nitrojs/starter/templates";
+const REGISTRY_URL = "https://raw.githubusercontent.com/nitrojs/starter/templates";
 
 const TEMPLATES = [
   { name: "vite", description: "Full-stack with Vite" },
@@ -71,8 +70,7 @@ const mainCommand = defineCommand({
     },
     cwd: {
       type: "string",
-      description:
-        "Set current working directory to resolve dirs relative to it",
+      description: "Set current working directory to resolve dirs relative to it",
       valueHint: "directory",
       default: ".",
     },
@@ -82,8 +80,7 @@ const mainCommand = defineCommand({
     },
     forceClean: {
       type: "boolean",
-      description:
-        "Remove any existing directory or file recursively before cloning",
+      description: "Remove any existing directory or file recursively before cloning",
     },
     offline: {
       type: "boolean",
@@ -284,9 +281,7 @@ const mainCommand = defineCommand({
     }
 
     // Display next steps
-    consola.success(
-      `${NAME} project has been created with the \`${template.name}\` template.`,
-    );
+    consola.success(`${NAME} project has been created with the \`${template.name}\` template.`);
     consola.info("Next steps:");
     const relativeTemplateDir = relative(process.cwd(), template.dir) || ".";
     if (relativeTemplateDir.length > 1) {
