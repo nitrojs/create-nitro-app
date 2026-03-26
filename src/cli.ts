@@ -119,7 +119,7 @@ const mainCommand = defineCommand({
 
     // Prompt the user where to create the Nitro app
     if (!args.dir) {
-      args.dir = await consola
+      (args as any) /* readonly */.dir = await consola
         .prompt(`Where would you like to create your ${NAME} app?`, {
           placeholder: `./${DEFAULT_DIR}`,
           type: "text",
@@ -176,7 +176,7 @@ const mainCommand = defineCommand({
 
     // Prompt the user which template to use
     if (!args.template) {
-      args.template = await consola
+      (args as any) /* readonly */.template = await consola
         .prompt(`What template would you like to use?`, {
           type: "select",
           options: TEMPLATES.map((t) => ({
@@ -258,7 +258,7 @@ const mainCommand = defineCommand({
     }
 
     if (args.gitInit === undefined) {
-      args.gitInit = await consola
+      (args as any) /* readonly */.gitInit = await consola
         .prompt("Initialize git repository?", {
           type: "confirm",
           cancel: "undefined",
