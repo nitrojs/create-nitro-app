@@ -43,9 +43,11 @@ deno run -A npm:create-nitro-app
 
 </details>
 
-<div style="display:flex;justify-content:center;">
-  <img src="./.images/preview.png" alt="Preview" style="max-width:100%;height:auto;display:block;" />
-</div>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./.images/preview-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./.images/preview-light.svg" />
+  <img src="./.images/preview-dark.svg" alt="Preview" />
+</picture>
 
 ## Development
 
