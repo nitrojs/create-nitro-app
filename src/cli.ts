@@ -323,7 +323,7 @@ const mainCommand = defineCommand({
       consola.log(` › cd \`${relativeTemplateDir}\``);
     }
     if (selectedPackageManager) {
-      consola.log(` › \`${runScriptCommand(selectedPackageManager, "dev")} \``);
+      consola.log(` › \`${runScriptCommand(selectedPackageManager, "dev")}\``);
     }
   },
 });
