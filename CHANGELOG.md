@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.8.5
+
+[compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.4...v0.8.5)
+
+### 🚀 Enhancements
+
+- Non interactive mode for ai ([cb8cb89](https://github.com/nitrojs/create-nitro-app/commit/cb8cb89))
+
+### 🩹 Fixes
+
+- **cli:** Remove extra space in dev command output ([bae7338](https://github.com/nitrojs/create-nitro-app/commit/bae7338))
+
+### 🏡 Chore
+
+- Update repo ([3c8de60](https://github.com/nitrojs/create-nitro-app/commit/3c8de60))
+- Update deps ([0493a42](https://github.com/nitrojs/create-nitro-app/commit/0493a42))
+- Fix ts issues ([64c0d68](https://github.com/nitrojs/create-nitro-app/commit/64c0d68))
+- Update agents.md ([389431a](https://github.com/nitrojs/create-nitro-app/commit/389431a))
+- Generate preview ([029e744](https://github.com/nitrojs/create-nitro-app/commit/029e744))
+
+### 🤖 CI
+
+- Bump actions ([#7](https://github.com/nitrojs/create-nitro-app/pull/7))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Abeer0 ([@iiio2](https://github.com/iiio2))
+
 ## v0.8.4
 
 [compare changes](https://github.com/nitrojs/create-nitro-app/compare/v0.8.3...v0.8.4)
