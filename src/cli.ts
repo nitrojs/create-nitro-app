@@ -240,7 +240,7 @@ const mainCommand = defineCommand({
     const selectedPackageManager = pmNames.includes(packageManagerArg)
       ? packageManagerArg
       : !interactive
-        ? (currentPackageManager || "npm")
+        ? currentPackageManager || "npm"
         : await consola.prompt("Which package manager would you like to use?", {
             type: "select",
             initial: currentPackageManager,
