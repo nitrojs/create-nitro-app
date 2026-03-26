@@ -10,6 +10,7 @@ import { defineCommand, runMain } from "citty";
 import { consola } from "consola";
 import { colors } from "consola/utils";
 import { downloadTemplate } from "giget";
+import { hasTTY, isAgent } from "std-env";
 import { installDependencies, packageManagers, runScriptCommand } from "nypm";
 
 // Based on: https://github.com/unjs/giget/blob/main/src/cli.ts
@@ -109,8 +110,22 @@ const mainCommand = defineCommand({
       type: "boolean",
       description: "Show verbose debugging info",
     },
+    help: {
+      type: "boolean",
+      alias: "h",
+      description: "Show usage information",
+    },
   },
   run: async ({ args }) => {
+    // Show usage and exit
+    const hasArgs = args.dir || args.template;
+    if (args.help || (isAgent && !hasArgs)) {
+      console.log(getUsage());
+      process.exit(args.help ? 0 : 1);
+    }
+
+    const interactive = hasTTY && !isAgent;
+
     process.stderr.write(BANNER);
 
     if (args.verbose) {
@@ -119,14 +134,18 @@ const mainCommand = defineCommand({
 
     // Prompt the user where to create the Nitro app
     if (!args.dir) {
-      (args as any) /* readonly */.dir = await consola
-        .prompt(`Where would you like to create your ${NAME} app?`, {
-          placeholder: `./${DEFAULT_DIR}`,
-          type: "text",
-          default: DEFAULT_DIR,
-          cancel: "reject",
-        })
-        .catch(() => process.exit(1));
+      if (!interactive) {
+        (args as any).dir = DEFAULT_DIR;
+      } else {
+        (args as any) /* readonly */.dir = await consola
+          .prompt(`Where would you like to create your ${NAME} app?`, {
+            placeholder: `./${DEFAULT_DIR}`,
+            type: "text",
+            default: DEFAULT_DIR,
+            cancel: "reject",
+          })
+          .catch(() => process.exit(1));
+      }
     }
 
     const cwd = resolve(args.cwd);
@@ -138,6 +157,12 @@ const mainCommand = defineCommand({
     // Prompt the user if the template download directory already exists
     // when no `--force` flag is provided
     let shouldForce = Boolean(args.force);
+    if (existsSync(templateDownloadPath) && !shouldForce && !interactive) {
+      consola.error(
+        `Directory ${colors.cyan(relative(process.cwd(), templateDownloadPath))} already exists. Use --force to override.`,
+      );
+      process.exit(1);
+    }
     while (existsSync(templateDownloadPath) && !shouldForce) {
       const selectedAction = await consola.prompt(
         `The directory ${colors.cyan(relative(process.cwd(), templateDownloadPath))} already exists. What would you like to do?`,
@@ -176,16 +201,20 @@ const mainCommand = defineCommand({
 
     // Prompt the user which template to use
     if (!args.template) {
-      (args as any) /* readonly */.template = await consola
-        .prompt(`What template would you like to use?`, {
-          type: "select",
-          options: TEMPLATES.map((t) => ({
-            value: t.name,
-            label: t.description,
-          })),
-          cancel: "reject",
-        })
-        .catch(() => process.exit(1));
+      if (!interactive) {
+        (args as any).template = TEMPLATES[0]!.name;
+      } else {
+        (args as any) /* readonly */.template = await consola
+          .prompt(`What template would you like to use?`, {
+            type: "select",
+            options: TEMPLATES.map((t) => ({
+              value: t.name,
+              label: t.description,
+            })),
+            cancel: "reject",
+          })
+          .catch(() => process.exit(1));
+      }
     }
 
     // Download the template
@@ -210,26 +239,28 @@ const mainCommand = defineCommand({
     const packageManagerArg = args.packageManager as PackageManagerName;
     const selectedPackageManager = pmNames.includes(packageManagerArg)
       ? packageManagerArg
-      : await consola.prompt("Which package manager would you like to use?", {
-          type: "select",
-          initial: currentPackageManager,
-          cancel: "undefined",
-          options: [
-            {
-              label: "(none)",
-              value: "" as PackageManagerName,
-              hint: "Skip install dependencies step",
-            },
-            ...pmNames.map(
-              (pm) =>
-                ({
-                  label: pm,
-                  value: pm,
-                  hint: currentPackageManager === pm ? "current" : undefined,
-                }) satisfies SelectPromptOptions["options"][number],
-            ),
-          ],
-        });
+      : !interactive
+        ? (currentPackageManager || "npm")
+        : await consola.prompt("Which package manager would you like to use?", {
+            type: "select",
+            initial: currentPackageManager,
+            cancel: "undefined",
+            options: [
+              {
+                label: "(none)",
+                value: "" as PackageManagerName,
+                hint: "Skip install dependencies step",
+              },
+              ...pmNames.map(
+                (pm) =>
+                  ({
+                    label: pm,
+                    value: pm,
+                    hint: currentPackageManager === pm ? "current" : undefined,
+                  }) satisfies SelectPromptOptions["options"][number],
+              ),
+            ],
+          });
 
     // Install project dependencies
     // or skip installation based on the '--no-install' flag
@@ -258,12 +289,16 @@ const mainCommand = defineCommand({
     }
 
     if (args.gitInit === undefined) {
-      (args as any) /* readonly */.gitInit = await consola
-        .prompt("Initialize git repository?", {
-          type: "confirm",
-          cancel: "undefined",
-        })
-        .then(Boolean);
+      if (!interactive) {
+        (args as any).gitInit = false;
+      } else {
+        (args as any) /* readonly */.gitInit = await consola
+          .prompt("Initialize git repository?", {
+            type: "confirm",
+            cancel: "undefined",
+          })
+          .then(Boolean);
+      }
     }
     if (args.gitInit) {
       try {
@@ -296,6 +331,26 @@ const mainCommand = defineCommand({
 runMain(mainCommand);
 
 // ---- Internal utils ----
+
+function getUsage() {
+  const bin = globalThis.__pkg_name__ || "create-nitro-app";
+  const templates = TEMPLATES.map((t) => t.name).join(", ");
+  return `Usage: ${bin} <dir> [options]
+
+Options:
+  --template, -t <name>        Template name (${templates})
+  --packageManager, -p <name>  Package manager (${pmNames.join(", ")})
+  --force                      Overwrite existing directory
+  --forceClean                 Remove existing directory before cloning
+  --no-install                 Skip dependency installation
+  --gitInit                    Initialize git repository
+  --offline                    Do not attempt to download, use cache
+  --preferOffline              Use cache if exists, otherwise download
+  --help, -h                   Show this help message
+
+Example:
+  ${bin} my-app --template vite --packageManager npm --gitInit`;
+}
 
 function detectCurrentPackageManager() {
   const userAgent = process.env.npm_config_user_agent;

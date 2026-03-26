@@ -33,6 +33,7 @@
     "obuild": "^0.4.32",
     "oxfmt": "^0.42.0",
     "oxlint": "^1.57.0",
+    "std-env": "^4.0.0",
     "tinyexec": "^1.0.4",
     "typescript": "^6.0.2",
     "vitest": "^4.1.1"
