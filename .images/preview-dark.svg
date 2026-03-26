@@ -1,205 +1,199 @@
-<svg height="485.6" width="688" xmlns="http://www.w3.org/2000/svg">
+<svg height="428" width="688" xmlns="http://www.w3.org/2000/svg">
 <g transform="translate(32,16)">
-<filter filterUnits="userSpaceOnUse" height="493.6" id="shadow" width="696" x="-32" y="-24">
+<filter filterUnits="userSpaceOnUse" height="436" id="shadow" width="696" x="-32" y="-24">
 <feGaussianBlur stdDeviation="12"/>
 </filter>
-<rect fill="#000000c0" filter="url(#shadow)" height="421.6" rx="10" ry="10" width="624" x="4" y="12"/>
-<rect fill="#282c34" height="421.6" rx="10" ry="10" width="624"/>
+<rect fill="#000000c0" filter="url(#shadow)" height="364" rx="10" ry="10" width="624" x="4" y="12"/>
+<rect fill="#282c34" height="364" rx="10" ry="10" width="624"/>
 <clipPath id="header">
 <rect height="28" width="624"/>
 </clipPath>
 <rect clip-path="url(#header)" fill="#383837" height="56" rx="10" ry="10" width="624"/>
-<line stroke="#000000c0" stroke-width="0.5" x1="0" x2="624" y1="28" y2="28"/><text dominant-baseline="central" fill="#b3b3b3" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="312" y="14">pnpm create-nitro-app nitro-app</text>
+<line stroke="#000000c0" stroke-width="0.5" x1="0" x2="624" y1="28" y2="28"/><text dominant-baseline="central" fill="#b3b3b3" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="312" y="14">pnpx create-nitro-app nitro-app</text>
 <g>
 <circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#ff5f56" stroke-width="0.5"/>
 <circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#ffbd2e" stroke-width="0.5"/>
 <circle cx="54" cy="14" fill="#28c941" r="6" stroke="#28c941" stroke-width="0.5"/>
 </g>
-<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="393.6" width="624" y="28">
+<svg class="terminal" font-family="JetBrains Mono, Fira Code, Source Code Pro, Cascadia Code, Consolas, Menlo, Monaco, DejaVu Sans Mono, monospace, Symbols Nerd Font Mono, Cascadia Mono" font-size="12" height="336" width="624" y="28">
 <svg fill="#dcdfe4" x="24" y="24">
 <g>
-<svg height="345.6" viewBox="0 0 48 28.8" width="576">
+<svg height="288" viewBox="0 0 48 24" width="576">
 <g stroke-width="0.025"/>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="14.4">
-<text xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">&gt; </tspan><tspan fill="#dcdfe4">create-nitro-app@0.8.4 </tspan><tspan fill="#dcdfe4">create-nitro-app </tspan><tspan fill="#dcdfe4">/home/pooya/Code/create-nitro </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#ec79c6">⣴</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
+<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#ec79c4">⠶</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>       </tspan></text>
+<text textLength="0.6em" x="4.2em" xml:space="preserve" y="0.96em"><tspan fill="#ec79c1">⠶</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
+<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec79bf">⠶</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
+<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec79bc">⠶</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
+<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#ec79ba">⢶</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
+<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#ec79b7">⣤</tspan></text>
+<text xml:space="preserve" y="0.96em"></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="28.8">
-<text xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">&gt; </tspan><tspan fill="#dcdfe4">node </tspan><tspan fill="#dcdfe4">./src/cli.ts </tspan><tspan fill="#dcdfe4">nitro-app </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec79b4">⢸</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#ec79b2">⡏</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
+<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#ec79af">⣼</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
+<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#ec79ad">⠏</tspan></text>
+<text xml:space="preserve" y="0.96em"></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="576" y="43.2">
+<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
+<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec79aa">⢀</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a8">⡿</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
+<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a5">⣼</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
+<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a2">⠏</tspan></text>
+<text xml:space="preserve" y="0.96em"></text>
+</svg>
+<svg height="14.4" overflow="hidden" width="576" y="57.6">
+<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
+<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a0">⣼</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec799d">⠃</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
+<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec799b">⠸</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
+<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec7998">⣯</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
+<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#ec7996">⣤</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
+<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#ec7993">⣤</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>            </tspan></text>
+<text textLength="0.6em" x="7.2em" xml:space="preserve" y="0.96em"><tspan fill="#ec7991">⣤</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
+<text textLength="0.6em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec798e">⣤</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>              </tspan></text>
+<text textLength="0.6em" x="8.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec798b">⣤</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#ec7989">█</tspan><tspan fill="#ec7986">█</tspan><tspan fill="#ec7984">█</tspan><tspan fill="#ec7981">╗ </tspan><tspan>  </tspan><tspan fill="#ec797f">█</tspan><tspan fill="#ec797c">█</tspan><tspan fill="#ec797a">╗</tspan><tspan fill="#ec7b79">█</tspan><tspan fill="#ec7e79">█</tspan><tspan fill="#ec8079">╗</tspan><tspan fill="#ec8379">█</tspan><tspan fill="#ec8679">█</tspan><tspan fill="#ec8879">█</tspan><tspan fill="#ec8b79">█</tspan><tspan fill="#ec8d79">█</tspan><tspan fill="#ec9079">█</tspan><tspan fill="#ec9279">█</tspan><tspan fill="#ec9579">█</tspan><tspan fill="#ec9779">╗</tspan><tspan fill="#ec9a79">█</tspan><tspan fill="#ec9d79">█</tspan><tspan fill="#ec9f79">█</tspan><tspan fill="#eca279">█</tspan><tspan fill="#eca479">█</tspan><tspan fill="#eca779">█</tspan><tspan fill="#eca979">╗ </tspan><tspan> </tspan><tspan fill="#ecac79">█</tspan><tspan fill="#ecae79">█</tspan><tspan fill="#ecb179">█</tspan><tspan fill="#ecb479">█</tspan><tspan fill="#ecb679">█</tspan><tspan fill="#ecb979">█</tspan><tspan fill="#ecbb79">╗</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="72">
-<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#a079ec">⣴</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
-<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#a379ec">⠶</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>       </tspan></text>
-<text textLength="0.6em" x="4.2em" xml:space="preserve" y="0.96em"><tspan fill="#a579ec">⠶</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
-<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#a879ec">⠶</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
-<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#aa79ec">⠶</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
-<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#ad79ec">⢶</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
-<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#b079ec">⣤</tspan></text>
-<text xml:space="preserve" y="0.96em"></text>
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan></text>
+<text textLength="0.6em" x="1.2em" xml:space="preserve" y="0.96em"><tspan fill="#ecbe79">⣸</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
+<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#ecc079">⡏</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>            </tspan></text>
+<text textLength="0.6em" x="7.2em" xml:space="preserve" y="0.96em"><tspan fill="#ecc379">⢀</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
+<text textLength="0.6em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#ecc579">⣾</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>              </tspan></text>
+<text textLength="0.6em" x="8.4em" xml:space="preserve" y="0.96em"><tspan fill="#ecc879">⠋</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#eccb79">█</tspan><tspan fill="#eccd79">█</tspan><tspan fill="#ecd079">█</tspan><tspan fill="#ecd279">█</tspan><tspan fill="#ecd579">╗ </tspan><tspan> </tspan><tspan fill="#ecd779">█</tspan><tspan fill="#ecda79">█</tspan><tspan fill="#ecdd79">║</tspan><tspan fill="#ecdf79">█</tspan><tspan fill="#ece279">█</tspan><tspan fill="#ece479">║</tspan><tspan fill="#ece779">╚</tspan><tspan fill="#ece979">═</tspan><tspan fill="#ecec79">═</tspan><tspan fill="#e9ec79">█</tspan><tspan fill="#e7ec79">█</tspan><tspan fill="#e4ec79">╔</tspan><tspan fill="#e2ec79">═</tspan><tspan fill="#dfec79">═</tspan><tspan fill="#ddec79">╝</tspan><tspan fill="#daec79">█</tspan><tspan fill="#d7ec79">█</tspan><tspan fill="#d5ec79">╔</tspan><tspan fill="#d2ec79">═</tspan><tspan fill="#d0ec79">═</tspan><tspan fill="#cdec79">█</tspan><tspan fill="#cbec79">█</tspan><tspan fill="#c8ec79">╗</tspan><tspan fill="#c5ec79">█</tspan><tspan fill="#c3ec79">█</tspan><tspan fill="#c0ec79">╔</tspan><tspan fill="#beec79">═</tspan><tspan fill="#bbec79">═</tspan><tspan fill="#b9ec79">═</tspan><tspan fill="#b6ec79">█</tspan><tspan fill="#b4ec79">█</tspan><tspan fill="#b1ec79">╗</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="86.4">
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan></text>
+<text textLength="0.6em" x="1.2em" xml:space="preserve" y="0.96em"><tspan fill="#aeec79">⠻</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
+<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#acec79">⠶</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#b279ec">⢸</tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#a9ec79">⠶</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#b579ec">⡏</tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#a7ec79">⢶</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
+<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#a4ec79">⡄</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
-<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#b779ec">⣼</tspan></text>
+<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#a2ec79">⢀</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
-<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#ba79ec">⠏</tspan></text>
-<text xml:space="preserve" y="0.96em"></text>
+<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#9fec79">⣴</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>            </tspan></text>
+<text textLength="0.6em" x="7.2em" xml:space="preserve" y="0.96em"><tspan fill="#9dec79">⠟</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
+<text textLength="0.6em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#9aec79">⠁</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#97ec79">█</tspan><tspan fill="#95ec79">█</tspan><tspan fill="#92ec79">╔</tspan><tspan fill="#90ec79">█</tspan><tspan fill="#8dec79">█</tspan><tspan fill="#8bec79">╗ </tspan><tspan fill="#88ec79">█</tspan><tspan fill="#85ec79">█</tspan><tspan fill="#83ec79">║</tspan><tspan fill="#80ec79">█</tspan><tspan fill="#7eec79">█</tspan><tspan fill="#7bec79">║ </tspan><tspan>  </tspan><tspan fill="#79ec7a">█</tspan><tspan fill="#79ec7c">█</tspan><tspan fill="#79ec7f">║ </tspan><tspan>  </tspan><tspan fill="#79ec81">█</tspan><tspan fill="#79ec84">█</tspan><tspan fill="#79ec86">█</tspan><tspan fill="#79ec89">█</tspan><tspan fill="#79ec8b">█</tspan><tspan fill="#79ec8e">█</tspan><tspan fill="#79ec91">╔</tspan><tspan fill="#79ec93">╝</tspan><tspan fill="#79ec96">█</tspan><tspan fill="#79ec98">█</tspan><tspan fill="#79ec9b">║ </tspan><tspan>  </tspan><tspan fill="#79ec9d">█</tspan><tspan fill="#79eca0">█</tspan><tspan fill="#79eca3">║</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="100.8">
-<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
-<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#bc79ec">⢀</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#bf79ec">⡿</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#79eca5">⣼</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
+<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#79eca8">⠇</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
-<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#c179ec">⣼</tspan></text>
+<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#79ecaa">⣠</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
-<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#c479ec">⠏</tspan></text>
-<text xml:space="preserve" y="0.96em"></text>
+<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#79ecad">⡾</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
+<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#79ecaf">⠋</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#79ecb2">█</tspan><tspan fill="#79ecb4">█</tspan><tspan fill="#79ecb7">║</tspan><tspan fill="#79ecba">╚</tspan><tspan fill="#79ecbc">█</tspan><tspan fill="#79ecbf">█</tspan><tspan fill="#79ecc1">╗</tspan><tspan fill="#79ecc4">█</tspan><tspan fill="#79ecc6">█</tspan><tspan fill="#79ecc9">║</tspan><tspan fill="#79eccb">█</tspan><tspan fill="#79ecce">█</tspan><tspan fill="#79ecd1">║ </tspan><tspan>  </tspan><tspan fill="#79ecd3">█</tspan><tspan fill="#79ecd6">█</tspan><tspan fill="#79ecd8">║ </tspan><tspan>  </tspan><tspan fill="#79ecdb">█</tspan><tspan fill="#79ecdd">█</tspan><tspan fill="#79ece0">╔</tspan><tspan fill="#79ece2">═</tspan><tspan fill="#79ece5">═</tspan><tspan fill="#79ece8">█</tspan><tspan fill="#79ecea">█</tspan><tspan fill="#79ebec">╗</tspan><tspan fill="#79e8ec">█</tspan><tspan fill="#79e6ec">█</tspan><tspan fill="#79e3ec">║ </tspan><tspan>  </tspan><tspan fill="#79e1ec">█</tspan><tspan fill="#79deec">█</tspan><tspan fill="#79dcec">║</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="115.2">
-<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
-<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#c779ec">⣼</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#c979ec">⠃</tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#79d9ec">⢠</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#79d7ec">⡟</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>       </tspan></text>
+<text textLength="0.6em" x="4.2em" xml:space="preserve" y="0.96em"><tspan fill="#79d4ec">⢀</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
-<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#cc79ec">⠸</tspan></text>
+<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#79d1ec">⣾</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
-<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#ce79ec">⣯</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
-<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#d179ec">⣤</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
-<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#d379ec">⣤</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>            </tspan></text>
-<text textLength="0.6em" x="7.2em" xml:space="preserve" y="0.96em"><tspan fill="#d679ec">⣤</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
-<text textLength="0.6em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#d979ec">⣤</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>              </tspan></text>
-<text textLength="0.6em" x="8.4em" xml:space="preserve" y="0.96em"><tspan fill="#db79ec">⣤</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#de79ec">█</tspan><tspan fill="#e079ec">█</tspan><tspan fill="#e379ec">█</tspan><tspan fill="#e579ec">╗ </tspan><tspan>  </tspan><tspan fill="#e879ec">█</tspan><tspan fill="#ea79ec">█</tspan><tspan fill="#ec79eb">╗</tspan><tspan fill="#ec79e8">█</tspan><tspan fill="#ec79e6">█</tspan><tspan fill="#ec79e3">╗</tspan><tspan fill="#ec79e1">█</tspan><tspan fill="#ec79de">█</tspan><tspan fill="#ec79db">█</tspan><tspan fill="#ec79d9">█</tspan><tspan fill="#ec79d6">█</tspan><tspan fill="#ec79d4">█</tspan><tspan fill="#ec79d1">█</tspan><tspan fill="#ec79cf">█</tspan><tspan fill="#ec79cc">╗</tspan><tspan fill="#ec79c9">█</tspan><tspan fill="#ec79c7">█</tspan><tspan fill="#ec79c4">█</tspan><tspan fill="#ec79c2">█</tspan><tspan fill="#ec79bf">█</tspan><tspan fill="#ec79bd">█</tspan><tspan fill="#ec79ba">╗ </tspan><tspan> </tspan><tspan fill="#ec79b8">█</tspan><tspan fill="#ec79b5">█</tspan><tspan fill="#ec79b2">█</tspan><tspan fill="#ec79b0">█</tspan><tspan fill="#ec79ad">█</tspan><tspan fill="#ec79ab">█</tspan><tspan fill="#ec79a8">╗</tspan></text>
+<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#79cfec">⠏</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#79ccec">█</tspan><tspan fill="#79caec">█</tspan><tspan fill="#79c7ec">║ </tspan><tspan fill="#79c5ec">╚</tspan><tspan fill="#79c2ec">█</tspan><tspan fill="#79c0ec">█</tspan><tspan fill="#79bdec">█</tspan><tspan fill="#79baec">█</tspan><tspan fill="#79b8ec">║</tspan><tspan fill="#79b5ec">█</tspan><tspan fill="#79b3ec">█</tspan><tspan fill="#79b0ec">║ </tspan><tspan>  </tspan><tspan fill="#79aeec">█</tspan><tspan fill="#79abec">█</tspan><tspan fill="#79a8ec">║ </tspan><tspan>  </tspan><tspan fill="#79a6ec">█</tspan><tspan fill="#79a3ec">█</tspan><tspan fill="#79a1ec">║ </tspan><tspan> </tspan><tspan fill="#799eec">█</tspan><tspan fill="#799cec">█</tspan><tspan fill="#7999ec">║</tspan><tspan fill="#7997ec">╚</tspan><tspan fill="#7994ec">█</tspan><tspan fill="#7991ec">█</tspan><tspan fill="#798fec">█</tspan><tspan fill="#798cec">█</tspan><tspan fill="#798aec">█</tspan><tspan fill="#7987ec">█</tspan><tspan fill="#7985ec">╔</tspan><tspan fill="#7982ec">╝</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="129.6">
-<text xml:space="preserve" y="0.96em"><tspan>  </tspan></text>
-<text textLength="0.6em" x="1.2em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a6">⣸</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
-<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a3">⡏</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>            </tspan></text>
-<text textLength="0.6em" x="7.2em" xml:space="preserve" y="0.96em"><tspan fill="#ec79a1">⢀</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
-<text textLength="0.6em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#ec799e">⣾</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>              </tspan></text>
-<text textLength="0.6em" x="8.4em" xml:space="preserve" y="0.96em"><tspan fill="#ec799b">⠋</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#ec7999">█</tspan><tspan fill="#ec7996">█</tspan><tspan fill="#ec7994">█</tspan><tspan fill="#ec7991">█</tspan><tspan fill="#ec798f">╗ </tspan><tspan> </tspan><tspan fill="#ec798c">█</tspan><tspan fill="#ec798a">█</tspan><tspan fill="#ec7987">║</tspan><tspan fill="#ec7984">█</tspan><tspan fill="#ec7982">█</tspan><tspan fill="#ec797f">║</tspan><tspan fill="#ec797d">╚</tspan><tspan fill="#ec797a">═</tspan><tspan fill="#ec7b79">═</tspan><tspan fill="#ec7d79">█</tspan><tspan fill="#ec8079">█</tspan><tspan fill="#ec8279">╔</tspan><tspan fill="#ec8579">═</tspan><tspan fill="#ec8779">═</tspan><tspan fill="#ec8a79">╝</tspan><tspan fill="#ec8d79">█</tspan><tspan fill="#ec8f79">█</tspan><tspan fill="#ec9279">╔</tspan><tspan fill="#ec9479">═</tspan><tspan fill="#ec9779">═</tspan><tspan fill="#ec9979">█</tspan><tspan fill="#ec9c79">█</tspan><tspan fill="#ec9e79">╗</tspan><tspan fill="#eca179">█</tspan><tspan fill="#eca479">█</tspan><tspan fill="#eca679">╔</tspan><tspan fill="#eca979">═</tspan><tspan fill="#ecab79">═</tspan><tspan fill="#ecae79">═</tspan><tspan fill="#ecb079">█</tspan><tspan fill="#ecb379">█</tspan><tspan fill="#ecb679">╗</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#7980ec">⣸</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#797dec">⢃</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
+<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#797aec">⣴</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>       </tspan></text>
+<text textLength="0.6em" x="4.2em" xml:space="preserve" y="0.96em"><tspan fill="#7a79ec">⠟</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
+<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#7d79ec">⠁</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#8079ec">╚</tspan><tspan fill="#8279ec">═</tspan><tspan fill="#8579ec">╝ </tspan><tspan> </tspan><tspan fill="#8779ec">╚</tspan><tspan fill="#8a79ec">═</tspan><tspan fill="#8c79ec">═</tspan><tspan fill="#8f79ec">═</tspan><tspan fill="#9179ec">╝</tspan><tspan fill="#9479ec">╚</tspan><tspan fill="#9779ec">═</tspan><tspan fill="#9979ec">╝ </tspan><tspan>  </tspan><tspan fill="#9c79ec">╚</tspan><tspan fill="#9e79ec">═</tspan><tspan fill="#a179ec">╝ </tspan><tspan>  </tspan><tspan fill="#a379ec">╚</tspan><tspan fill="#a679ec">═</tspan><tspan fill="#a879ec">╝ </tspan><tspan> </tspan><tspan fill="#ab79ec">╚</tspan><tspan fill="#ae79ec">═</tspan><tspan fill="#b079ec">╝ </tspan><tspan fill="#b379ec">╚</tspan><tspan fill="#b579ec">═</tspan><tspan fill="#b879ec">═</tspan><tspan fill="#ba79ec">═</tspan><tspan fill="#bd79ec">═</tspan><tspan fill="#c079ec">═</tspan><tspan fill="#c279ec">╝</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="144">
-<text xml:space="preserve" y="0.96em"><tspan>  </tspan></text>
-<text textLength="0.6em" x="1.2em" xml:space="preserve" y="0.96em"><tspan fill="#ecb879">⠻</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
-<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#ecbb79">⠶</tspan></text>
+<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#c579ec">⢠</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#ecbd79">⠶</tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#c779ec">⣿</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#ecc079">⢶</tspan></text>
+<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#ca79ec">⡿</tspan></text>
 <text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
-<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#ecc279">⡄</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
-<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#ecc579">⢀</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
-<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#ecc779">⣴</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>            </tspan></text>
-<text textLength="0.6em" x="7.2em" xml:space="preserve" y="0.96em"><tspan fill="#ecca79">⠟</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
-<text textLength="0.6em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#eccd79">⠁</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#eccf79">█</tspan><tspan fill="#ecd279">█</tspan><tspan fill="#ecd479">╔</tspan><tspan fill="#ecd779">█</tspan><tspan fill="#ecd979">█</tspan><tspan fill="#ecdc79">╗ </tspan><tspan fill="#ecde79">█</tspan><tspan fill="#ece179">█</tspan><tspan fill="#ece479">║</tspan><tspan fill="#ece679">█</tspan><tspan fill="#ece979">█</tspan><tspan fill="#eceb79">║ </tspan><tspan>  </tspan><tspan fill="#eaec79">█</tspan><tspan fill="#e7ec79">█</tspan><tspan fill="#e5ec79">║ </tspan><tspan>  </tspan><tspan fill="#e2ec79">█</tspan><tspan fill="#e0ec79">█</tspan><tspan fill="#ddec79">█</tspan><tspan fill="#dbec79">█</tspan><tspan fill="#d8ec79">█</tspan><tspan fill="#d5ec79">█</tspan><tspan fill="#d3ec79">╔</tspan><tspan fill="#d0ec79">╝</tspan><tspan fill="#ceec79">█</tspan><tspan fill="#cbec79">█</tspan><tspan fill="#c9ec79">║ </tspan><tspan>  </tspan><tspan fill="#c6ec79">█</tspan><tspan fill="#c4ec79">█</tspan><tspan fill="#c1ec79">║</tspan></text>
+<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#cc79ec">⠋</tspan></text>
+<text xml:space="preserve" y="0.96em"></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="158.4">
-<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#beec79">⣼</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
-<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#bcec79">⠇</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
-<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#b9ec79">⣠</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>          </tspan></text>
-<text textLength="0.6em" x="6em" xml:space="preserve" y="0.96em"><tspan fill="#b7ec79">⡾</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>           </tspan></text>
-<text textLength="0.6em" x="6.6em" xml:space="preserve" y="0.96em"><tspan fill="#b4ec79">⠋</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#b2ec79">█</tspan><tspan fill="#afec79">█</tspan><tspan fill="#acec79">║</tspan><tspan fill="#aaec79">╚</tspan><tspan fill="#a7ec79">█</tspan><tspan fill="#a5ec79">█</tspan><tspan fill="#a2ec79">╗</tspan><tspan fill="#a0ec79">█</tspan><tspan fill="#9dec79">█</tspan><tspan fill="#9bec79">║</tspan><tspan fill="#98ec79">█</tspan><tspan fill="#95ec79">█</tspan><tspan fill="#93ec79">║ </tspan><tspan>  </tspan><tspan fill="#90ec79">█</tspan><tspan fill="#8eec79">█</tspan><tspan fill="#8bec79">║ </tspan><tspan>  </tspan><tspan fill="#89ec79">█</tspan><tspan fill="#86ec79">█</tspan><tspan fill="#84ec79">╔</tspan><tspan fill="#81ec79">═</tspan><tspan fill="#7eec79">═</tspan><tspan fill="#7cec79">█</tspan><tspan fill="#79ec79">█</tspan><tspan fill="#79ec7c">╗</tspan><tspan fill="#79ec7e">█</tspan><tspan fill="#79ec81">█</tspan><tspan fill="#79ec83">║ </tspan><tspan>  </tspan><tspan fill="#79ec86">█</tspan><tspan fill="#79ec88">█</tspan><tspan fill="#79ec8b">║</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
+<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#cf79ec">⠘</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
+<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#d179ec">⠋</tspan></text>
+<text xml:space="preserve" y="0.96em"></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="172.8">
-<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#79ec8d">⢠</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#79ec90">⡟</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>       </tspan></text>
-<text textLength="0.6em" x="4.2em" xml:space="preserve" y="0.96em"><tspan fill="#79ec93">⢀</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
-<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#79ec95">⣾</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>         </tspan></text>
-<text textLength="0.6em" x="5.4em" xml:space="preserve" y="0.96em"><tspan fill="#79ec98">⠏</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#79ec9a">█</tspan><tspan fill="#79ec9d">█</tspan><tspan fill="#79ec9f">║ </tspan><tspan fill="#79eca2">╚</tspan><tspan fill="#79eca4">█</tspan><tspan fill="#79eca7">█</tspan><tspan fill="#79ecaa">█</tspan><tspan fill="#79ecac">█</tspan><tspan fill="#79ecaf">║</tspan><tspan fill="#79ecb1">█</tspan><tspan fill="#79ecb4">█</tspan><tspan fill="#79ecb6">║ </tspan><tspan>  </tspan><tspan fill="#79ecb9">█</tspan><tspan fill="#79ecbc">█</tspan><tspan fill="#79ecbe">║ </tspan><tspan>  </tspan><tspan fill="#79ecc1">█</tspan><tspan fill="#79ecc3">█</tspan><tspan fill="#79ecc6">║ </tspan><tspan> </tspan><tspan fill="#79ecc8">█</tspan><tspan fill="#79eccb">█</tspan><tspan fill="#79eccd">║</tspan><tspan fill="#79ecd0">╚</tspan><tspan fill="#79ecd3">█</tspan><tspan fill="#79ecd5">█</tspan><tspan fill="#79ecd8">█</tspan><tspan fill="#79ecda">█</tspan><tspan fill="#79ecdd">█</tspan><tspan fill="#79ecdf">█</tspan><tspan fill="#79ece2">╔</tspan><tspan fill="#79ece4">╝</tspan></text>
-</svg>
-<svg height="14.4" overflow="hidden" width="576" y="187.2">
-<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#79ece7">⣸</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#79ecea">⢃</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
-<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#79ecec">⣴</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>       </tspan></text>
-<text textLength="0.6em" x="4.2em" xml:space="preserve" y="0.96em"><tspan fill="#79e9ec">⠟</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>        </tspan></text>
-<text textLength="0.6em" x="4.8em" xml:space="preserve" y="0.96em"><tspan fill="#79e7ec">⠁</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>                   </tspan><tspan fill="#79e4ec">╚</tspan><tspan fill="#79e1ec">═</tspan><tspan fill="#79dfec">╝ </tspan><tspan> </tspan><tspan fill="#79dcec">╚</tspan><tspan fill="#79daec">═</tspan><tspan fill="#79d7ec">═</tspan><tspan fill="#79d5ec">═</tspan><tspan fill="#79d2ec">╝</tspan><tspan fill="#79cfec">╚</tspan><tspan fill="#79cdec">═</tspan><tspan fill="#79caec">╝ </tspan><tspan>  </tspan><tspan fill="#79c8ec">╚</tspan><tspan fill="#79c5ec">═</tspan><tspan fill="#79c3ec">╝ </tspan><tspan>  </tspan><tspan fill="#79c0ec">╚</tspan><tspan fill="#79beec">═</tspan><tspan fill="#79bbec">╝ </tspan><tspan> </tspan><tspan fill="#79b8ec">╚</tspan><tspan fill="#79b6ec">═</tspan><tspan fill="#79b3ec">╝ </tspan><tspan fill="#79b1ec">╚</tspan><tspan fill="#79aeec">═</tspan><tspan fill="#79acec">═</tspan><tspan fill="#79a9ec">═</tspan><tspan fill="#79a7ec">═</tspan><tspan fill="#79a4ec">═</tspan><tspan fill="#79a1ec">╝</tspan></text>
-</svg>
-<svg height="14.4" overflow="hidden" width="576" y="201.6">
-<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
-<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#799fec">⢠</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#799cec">⣿</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>     </tspan></text>
-<text textLength="0.6em" x="3em" xml:space="preserve" y="0.96em"><tspan fill="#799aec">⡿</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>      </tspan></text>
-<text textLength="0.6em" x="3.6em" xml:space="preserve" y="0.96em"><tspan fill="#7997ec">⠋</tspan></text>
-<text xml:space="preserve" y="0.96em"></text>
+<text xml:space="preserve" y="0.96em"><tspan>                     </tspan><tspan fill="#d479ec">[</tspan><tspan fill="#d779ec">B</tspan><tspan fill="#d979ec">u</tspan><tspan fill="#dc79ec">i</tspan><tspan fill="#de79ec">l</tspan><tspan fill="#e179ec">d </tspan><tspan fill="#e379ec">a</tspan><tspan fill="#e679ec">n</tspan><tspan fill="#e879ec">y </tspan><tspan fill="#eb79ec">s</tspan><tspan fill="#ec79ea">e</tspan><tspan fill="#ec79e8">r</tspan><tspan fill="#ec79e5">v</tspan><tspan fill="#ec79e2">e</tspan><tspan fill="#ec79e0">r </tspan><tspan fill="#ec79dd">w</tspan><tspan fill="#ec79db">i</tspan><tspan fill="#ec79d8">t</tspan><tspan fill="#ec79d6">h </tspan><tspan fill="#ec79d3">N</tspan><tspan fill="#ec79d1">i</tspan><tspan fill="#ec79ce">t</tspan><tspan fill="#ec79cb">r</tspan><tspan fill="#ec79c9">o</tspan><tspan fill="#ec79c6">]</tspan></text>
 </svg>
 <svg height="14.4" overflow="hidden" width="576" y="216">
-<text xml:space="preserve" y="0.96em"><tspan>   </tspan></text>
-<text textLength="0.6em" x="1.8em" xml:space="preserve" y="0.96em"><tspan fill="#7995ec">⠘</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>    </tspan></text>
-<text textLength="0.6em" x="2.4em" xml:space="preserve" y="0.96em"><tspan fill="#7992ec">⠋</tspan></text>
-<text xml:space="preserve" y="0.96em"></text>
-</svg>
-<svg height="14.4" overflow="hidden" width="576" y="230.4">
-<text xml:space="preserve" y="0.96em"><tspan>                     </tspan><tspan fill="#798fec">[</tspan><tspan fill="#798dec">B</tspan><tspan fill="#798aec">u</tspan><tspan fill="#7988ec">i</tspan><tspan fill="#7985ec">l</tspan><tspan fill="#7983ec">d </tspan><tspan fill="#7980ec">a</tspan><tspan fill="#797eec">n</tspan><tspan fill="#797bec">y </tspan><tspan fill="#7a79ec">s</tspan><tspan fill="#7c79ec">e</tspan><tspan fill="#7f79ec">r</tspan><tspan fill="#8179ec">v</tspan><tspan fill="#8479ec">e</tspan><tspan fill="#8779ec">r </tspan><tspan fill="#8979ec">w</tspan><tspan fill="#8c79ec">i</tspan><tspan fill="#8e79ec">t</tspan><tspan fill="#9179ec">h </tspan><tspan fill="#9379ec">N</tspan><tspan fill="#9679ec">i</tspan><tspan fill="#9979ec">t</tspan><tspan fill="#9b79ec">r</tspan><tspan fill="#9e79ec">o</tspan><tspan fill="#a079ec">]</tspan></text>
-</svg>
-<svg height="14.4" overflow="hidden" width="576" y="273.6">
 <text xml:space="preserve" y="0.96em"></text>
 <text textLength="0.6em" x="0em" xml:space="preserve" y="0.96em"><tspan fill="#56b6c2">ℹ</tspan></text>
-<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dcdfe4">Creating </tspan><tspan fill="#dcdfe4">a </tspan><tspan fill="#dcdfe4">new </tspan><tspan fill="#dcdfe4">project </tspan><tspan fill="#dcdfe4">in </tspan><tspan fill="#56b6c2">nitro-app</tspan><tspan fill="#dcdfe4">. </tspan><tspan>                            </tspan><tspan fill="#545d6d">5:07:55 </tspan><tspan fill="#545d6d">PM</tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>  </tspan><tspan fill="#dcdfe4">Creating </tspan><tspan fill="#dcdfe4">a </tspan><tspan fill="#dcdfe4">new </tspan><tspan fill="#dcdfe4">project </tspan><tspan fill="#dcdfe4">in </tspan><tspan fill="#56b6c2">nitro-app</tspan><tspan fill="#dcdfe4">. </tspan><tspan>                            </tspan><tspan fill="#545d6d">5:15:12 </tspan><tspan fill="#545d6d">PM</tspan></text>
 </svg>
-<svg height="14.4" overflow="hidden" width="576" y="302.4">
+<svg height="14.4" overflow="hidden" width="576" y="244.8">
 <text xml:space="preserve" y="0.96em"><tspan fill="#56b6c2">❯</tspan><tspan> </tspan><tspan fill="#dcdfe4">What </tspan><tspan fill="#dcdfe4">template </tspan><tspan fill="#dcdfe4">would </tspan><tspan fill="#dcdfe4">you </tspan><tspan fill="#dcdfe4">like </tspan><tspan fill="#dcdfe4">to </tspan><tspan fill="#dcdfe4">use? </tspan></text>
 </svg>
-<svg height="14.4" overflow="hidden" width="576" y="316.8">
+<svg height="14.4" overflow="hidden" width="576" y="259.2">
 <text xml:space="preserve" y="0.96em"><tspan fill="#98c379">●</tspan><tspan> </tspan><tspan fill="#dcdfe4">Full-stack </tspan><tspan fill="#dcdfe4">with </tspan><tspan fill="#dcdfe4">Vite </tspan></text>
 </svg>
-<svg height="14.4" overflow="hidden" width="576" y="331.2">
+<svg height="14.4" overflow="hidden" width="576" y="273.6">
 <text xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4" opacity="0.5">○</tspan><tspan> </tspan><tspan fill="#dcdfe4" opacity="0.5">Backend </tspan><tspan fill="#dcdfe4" opacity="0.5">with </tspan><tspan fill="#dcdfe4" opacity="0.5">Nitro </tspan><tspan fill="#dcdfe4" opacity="0.5">CLI</tspan></text>
 </svg>
 </g>
 </svg>
 </svg>
-<rect fill="none" height="421.6" rx="10" ry="10" stroke="#000000" stroke-width="0.5" width="624"/>
-<rect fill="none" height="419.6" rx="9" ry="9" stroke="#f0f0f080" stroke-width="0.5" width="622" x="1" y="1"/>
+<rect fill="none" height="364" rx="10" ry="10" stroke="#000000" stroke-width="0.5" width="624"/>
+<rect fill="none" height="362" rx="9" ry="9" stroke="#f0f0f080" stroke-width="0.5" width="622" x="1" y="1"/>
 </g>
 <style>
 @font-face {
