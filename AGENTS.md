@@ -17,14 +17,25 @@ dist/                # Compiled output (single bundled .mjs executable)
 
 ### CLI Flow (`src/cli.ts`)
 
-1. Display ASCII banner
-2. Prompt for target directory (default: `nitro-app`)
-3. Handle existing directory (override/rename/abort)
-4. Select template from registry
-5. Download template via `giget` from `https://raw.githubusercontent.com/nitrojs/starter/templates`
-6. Detect/select package manager and install dependencies
-7. Optionally initialize git repo
-8. Display next steps
+The CLI runs in three modes based on environment:
+
+1. **Interactive (TTY)** — full prompts for all options
+2. **Non-interactive (no TTY)** — skips prompts, uses defaults
+3. **AI Agent (`isAgent` from `std-env`)** — no args: shows usage + exits 1; with args: uses defaults (non-interactive)
+
+Interactive flow:
+
+1. Check for agent/help — show usage if needed
+2. Display ASCII banner
+3. Prompt for target directory (default: `nitro-app`)
+4. Handle existing directory (override/rename/abort)
+5. Select template from registry
+6. Download template via `giget` from `https://raw.githubusercontent.com/nitrojs/starter/templates`
+7. Detect/select package manager and install dependencies
+8. Optionally initialize git repo
+9. Display next steps
+
+Non-interactive/agent defaults: dir=`nitro-app`, template=`vite`, PM=detected or `npm`, gitInit=`false`.
 
 ### CLI Arguments
 
@@ -38,6 +49,7 @@ dist/                # Compiled output (single bundled .mjs executable)
 | `--install`                     | Install deps (default: true)       |
 | `--packageManager/-p`           | Specify PM (npm, pnpm, yarn, bun)  |
 | `--gitInit`                     | Initialize git repo                |
+| `--help/-h`                     | Show usage information             |
 
 ### Templates
 
